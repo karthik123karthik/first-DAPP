@@ -14,7 +14,12 @@
 <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
         type="application/javascript"></script>
 <script>
-const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+window.ethereum.enable();
+const provider = new ethers.providers.Web3Provider(
+    web3.currentProvider,
+  "rinkeby"
+);
 var MoodContractAddress = "0xB44C91280a8aE0A57452dC5a23D0d5B440a9E891";
 var MoodContractAbi = [
 {
